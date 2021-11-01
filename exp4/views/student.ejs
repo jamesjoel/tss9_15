@@ -11,6 +11,8 @@
                         <th>Fee</th>
                         <th>City</th>
                         <th>Address</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                     <% result.forEach(function(x, n){ %>
                         <tr>
@@ -19,6 +21,8 @@
                             <td><%= x.fee %></td>
                             <td><%= x.city %></td>
                             <td><%= x.address %></td>
+                            <td><a class="btn btn-sm btn-info" href="/student/edit/<%= x._id %>">Edit</a></td>
+                            <td><a class="btn btn-sm btn-danger" href="/student/delete/<%= x._id %>">Delete</a></td>
                         </tr>
                     <% }) %>
 
