@@ -1,0 +1,33 @@
+<div class="container mt-4">
+    <div *ngIf="showMsg" class="alert alert-danger">You cannot press mouse right button </div>
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <table (contextmenu)="demo2()" class="table table-bordered table-dark table-hover table-striped">
+                <tr>
+                    <th>S.No</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>City</th>
+                </tr>
+                <tr *ngFor="let a of data; let n = index">
+                    <td>{{ n+1 }}</td>
+                    <td>{{ a.name }}</td>
+                    <td>{{ a.age }}</td>
+                    <td>{{ a.city }}</td>
+                </tr>
+
+            </table>
+            <br />
+            <input type="text" />
+            <Br />
+            <Br />
+            <textarea></textarea>
+            <Br />
+            <Br />
+            <input type="text" value="hello rohit" (select)="demo()"/>
+            <Br />
+            <Br />
+            <p (contextmenu)="demo()">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis reprehenderit aspernatur repellat nostrum incidunt delectus quos eum, eveniet aliquid magnam voluptatibus maiores earum perspiciatis officia atque eos placeat. Soluta, eaque? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque cumque, sunt mollitia quasi ad sit asperiores minus, quaerat accusamus nesciunt suscipit earum repellendus nemo ea facilis quidem cupiditate adipisci ipsam!</p>l
+        </div>
+    </div>
+</div>
