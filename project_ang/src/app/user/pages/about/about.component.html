@@ -1,1 +1,26 @@
 <app-collection></app-collection>
+
+<br />
+<Br />
+<h1>About Page</h1>
+<button class="btn btn-primary" (click)="test()">OK</button>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <table class="table table-dark">
+                <tr>
+                    <th>S.No.</th>
+                    <th>Name</th>
+                    <th>Username</th>
+                    <th>Phone</th>
+                </tr>
+                <tr *ngFor="let d of allData; let n = index">
+                    <td>{{ n+1 }}</td>
+                    <td>{{ d.name }}</td>
+                    <td>{{ d.username }}</td>
+                    <td>{{ d.phone }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
