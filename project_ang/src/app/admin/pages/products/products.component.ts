@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from '../../../services/product.service';
 
 @Component({
   selector: 'app-products',
@@ -7,49 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
 
-  showMsg=false;
-  data = [
-    {
-      name : "rohit",
-      age : 21,
-      city : "indore"
-    },
-    {
-      name: "amar",
-      age: 22,
-      city: "mumbai"
-    },
-    {
-      name: "nidhi",
-      age: 28,
-      city: "mumbai"
-    },
-    {
-      name: "rajesh",
-      age: 27,
-      city: "pune"
-    }
-  ]
+  allProduct:any=[];
 
-  constructor() { }
+  constructor(
+    private _prod : ProductService
+  ) {
+
+    this._prod.getAll().subscribe((result)=>{
+      // console.log(result);
+      this.allProduct = result;
+    })
+
+   }
 
   ngOnInit(): void {
   }
 
-  demo(){
-    // alert();
-   return false;
-  }
-  demo2(){
-    this.showMsg = true;
-    setTimeout(()=>{
-      this.showMsg = false;
-    }, 1000);
-    return false;
-  }
-
-  demo3(){
-    this.showMsg = false;
-  }
+  
 
 }
