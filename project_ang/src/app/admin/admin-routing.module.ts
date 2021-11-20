@@ -4,6 +4,7 @@ import { AdminComponent } from './admin.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { CategoryComponent } from './pages/category/category.component';
+import { AddProductComponent } from './pages/add-product/add-product.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
       {
         path : "category",
         component : CategoryComponent
+      },
+      {
+        path : "product/add",
+        component : AddProductComponent
       }
     ]
   }

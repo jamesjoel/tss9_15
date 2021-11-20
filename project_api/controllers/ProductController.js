@@ -8,4 +8,10 @@ routes.get("/", (req, res)=>{
     })
 })
 
+routes.post("/", (req, res)=>{
+    Product.insert(req.body, (err, result)=>{
+        res.send(result);
+    })
+})
+
 module.exports = routes;

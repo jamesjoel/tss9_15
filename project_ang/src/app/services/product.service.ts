@@ -11,8 +11,8 @@ export class ProductService {
   getAll(){
     return this._http.get<any>("http://localhost:3000/api/product");
   }
-  save(){
-
+  save(obj:any){
+    return this._http.post<any>("http://localhost:3000/api/product", obj)
   }
   update(){
 
