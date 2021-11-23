@@ -5,21 +5,13 @@ import { environment } from '../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService {
-
+export class UserService {
   api = environment.ApiUrl;
-  constructor(private _http : HttpClient) { }
+  constructor(
+    private _http : HttpClient
+  ) { }
 
-  getAll(){
-    return this._http.get<any>(this.api+"/product");
-  }
   save(obj:any){
-    return this._http.post<any>(this.api+"/product", obj)
-  }
-  update(){
-
-  }
-  delete(){
-
+    return this._http.post<any>(this.api+"/user/signup", obj);
   }
 }

@@ -32,7 +32,12 @@
                     <label>Re-Password</label>
                     <input formControlName="re_password" type="password" [ngClass]="{'is-invalid' : signupForm.controls.re_password.errors && checkForm }" class="form-control" />
                     <div class="invalid-feedback" *ngIf="signupForm.controls.re_password.errors && checkForm">
-                        Insert Your Re-Password
+                        <div *ngIf="signupForm.controls.re_password.errors.required">
+                            Insert Your Re-Password
+                        </div>
+                        <div *ngIf="signupForm.controls.re_password.errors.repassErr">
+                            Password and Re-Pasword not Matched
+                        </div>
                     </div>
                 </div>
                 <div class="form-group">
@@ -47,7 +52,15 @@
                     <label>Contact</label>
                     <input formControlName="contact" type="text" class="form-control" [ngClass]="{'is-invalid' : signupForm.controls.contact.errors && checkForm }" />
                     <div class="invalid-feedback" *ngIf="signupForm.controls.contact.errors && checkForm">
-                        Insert Your Contact Number
+                        <div *ngIf="signupForm.controls.contact.errors.required">
+                            Insert Your Contact Number
+                        </div>
+                        <div *ngIf="signupForm.controls.contact.errors.numErr">
+                            Insert Numbers Only
+                        </div>
+                        <div *ngIf="signupForm.controls.contact.errors.sizeErr">
+                            Insert Numbers between 10 to 11 Digit
+                        </div>
                     </div>
                 </div>
                 <div class="form-group">
