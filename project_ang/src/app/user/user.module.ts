@@ -13,6 +13,7 @@ import { SliderComponent } from './shared/slider/slider.component';
 import { CollectionComponent } from './shared/collection/collection.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { LoginComponent } from './pages/login/login.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { SignupComponent } from './pages/signup/signup.component';
     SliderComponent,
     CollectionComponent,
     FooterComponent,
-    SignupComponent
+    SignupComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,
