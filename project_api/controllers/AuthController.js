@@ -2,6 +2,7 @@ var express = require("express");
 var routes = express.Router();
 var User = require("../models/User");
 var sha1 = require("sha1");
+var jwt = require("jsonwebtoken");
 
 routes.post("/", (req, res)=>{
     var u = req.body.username;
@@ -12,7 +13,11 @@ routes.post("/", (req, res)=>{
             if(result[0].password == p)
             {
 
-                res.status(200).send({ success : true });
+                // res.status(200).send({ success : true });
+                var obj = { _id : result[0]._id, name : result[0].name, email : result[0].email };
+                
+                var token = jwt.sign(obj, "The stepping stone");
+                res.status(200).send({ success : true, token : token });
             }
             else{
 
