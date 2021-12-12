@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { numCheck, sizeCheck, passCheck } from '../../../helper/custome.validation';
 import { UserService } from '../../../services/user.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-signup',
@@ -12,10 +14,12 @@ export class SignupComponent implements OnInit {
 
   signupForm:FormGroup;
   checkForm=false;
+  formSubmit = false;
 
   constructor(
     private _fb : FormBuilder,
-    private _user : UserService
+    private _user : UserService,
+    private _router : Router
     ) {
     this.signupForm = this._fb.group({
       name : ["", Validators.required],
@@ -41,7 +45,12 @@ export class SignupComponent implements OnInit {
     }
     // console.log(this.signupForm.value);
     this._user.save(this.signupForm.value).subscribe((result)=>{
-      console.log(result);
+      // console.log(result);
+      // this.signupForm.reset();
+      // this.checkForm=false;
+      // this.formSubmit=true;
+      this._router.navigate(["/login"]);
+
     })
   }
 

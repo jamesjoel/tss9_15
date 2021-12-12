@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MyservService } from '../../../services/myserv.service';
 import { HttpClient } from '@angular/common/http';
 import { MyData, User } from '../../../models/allData.interface';
+import { Title } from '@angular/platform-browser';
 
 
 @Component({
@@ -14,11 +15,13 @@ export class AboutComponent implements OnInit {
   allData:MyData[]=[];
   constructor(
     private a : MyservService,
-    private _http : HttpClient
+    private _http : HttpClient,
+    private _title : Title
     
     ) { }
 
   ngOnInit(): void {
+    this._title.setTitle("About Page");
   }
 
   test(){

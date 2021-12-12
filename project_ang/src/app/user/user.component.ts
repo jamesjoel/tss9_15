@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, NavigationEnd, RouterEvent } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private _router : Router,
+    private _actRoute : ActivatedRoute
+  ) { 
+    
+    // this._router.events.subscribe((res:any)=>{
+    //   // if(res instanceof NavigationEnd){
+    //     // console.log(res.urlAfterRedirects)
+    //   }
+    // })
+  }
 
   ngOnInit(): void {
+    
   }
 
 }

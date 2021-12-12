@@ -81,7 +81,9 @@
                 <Br />
                 <input type="submit" (click)="submit()" value="Signup" class="btn btn-primary" />
 
-
+                <p *ngIf="formSubmit">
+                    Registration Successfull, Please Login to Your Profile
+                </p>
 
             </form>
         </div>

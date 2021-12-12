@@ -5,6 +5,8 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { CategoryComponent } from './pages/category/category.component';
 import { AddProductComponent } from './pages/add-product/add-product.component';
+import { StudentComponent } from './pages/student/student.component';
+import { StudentAddEditComponent } from './pages/student-add-edit/student-add-edit.component';
 
 const routes: Routes = [
   {
@@ -26,6 +28,14 @@ const routes: Routes = [
       {
         path : "product/add",
         component : AddProductComponent
+      },
+      {
+        path : "student",
+        component : StudentComponent
+      },
+      {
+        path : "student/add",
+        component : StudentAddEditComponent
       }
     ]
   }

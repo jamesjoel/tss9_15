@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
@@ -13,6 +13,8 @@ import { CategoryComponent } from './pages/category/category.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { AddProductComponent } from './pages/add-product/add-product.component';
+import { StudentComponent } from './pages/student/student.component';
+import { StudentAddEditComponent } from './pages/student-add-edit/student-add-edit.component';
 
 
 @NgModule({
@@ -23,13 +25,16 @@ import { AddProductComponent } from './pages/add-product/add-product.component';
     CategoryComponent,
     HeaderComponent,
     FooterComponent,
-    AddProductComponent
+    AddProductComponent,
+    StudentComponent,
+    StudentAddEditComponent
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AdminModule { }
