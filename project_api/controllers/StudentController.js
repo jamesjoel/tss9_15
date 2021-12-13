@@ -12,16 +12,18 @@ routes.get("/", (req, res)=>{
 routes.get("/:id", (req, res)=>{
     var id = mongodb.ObjectId(req.params.id);
     Student.find({_id : id}, (err, result)=>{
-        res.send(result);
+        res.send(result[0]);
     })
 });
 routes.post("/", (req, res)=>{
+    delete req.body._id;
     Student.insert(req.body, ()=>{
         res.send({ success : true});
     })
 });
 routes.put("/:id", (req, res)=>{
     var id = mongodb.ObjectId(req.params.id);
+    delete req.body._id;
     Student.update({_id : id }, req.body, ()=>{
         res.send({ success : true });
     })

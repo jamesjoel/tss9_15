@@ -13,6 +13,7 @@
                     <th>Course</th>
                     <th>Adderss</th>
                     <th>Delete</th>
+                    <th>Edit</th>
                 </tr>
                 <tr *ngFor="let s of allStudent; let n = index">
                     <td>{{ n+1 }}</td>
@@ -22,6 +23,7 @@
                     <td>{{ s.course }}</td>
                     <td>{{ s.address }}</td>
                     <td><button (click)="askDelete(s)" data-toggle="modal" data-target="#delModal" class="btn btn-sm btn-danger">Delete</button></td>
+                    <td><a routerLink="/admin/student/edit/{{ s._id }}" class="btn btn-info">Edit</a></td>
                 </tr>
             </table>
 

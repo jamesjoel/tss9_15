@@ -36,6 +36,10 @@ const routes: Routes = [
       {
         path : "student/add",
         component : StudentAddEditComponent
+      },
+      {
+        path : "student/edit/:id",
+        component : StudentAddEditComponent
       }
     ]
   }

@@ -11,8 +11,9 @@
             </div>
             <div class="form-group">
                 <label>Email</label>
-                <input [ngClass]="{'is-invalid' : studentForm.controls.email.errors && checkForm }" type="text" formControlName="email" class="form-control" />
-                <div class="invalid-feedback" *ngIf="studentForm.controls.email.errors && checkForm">
+                <!-- [attr.disabled]="studentForm.controls._id.value==''?false : true" -->
+                <input  [ngClass]="{'is-invalid' : studentForm.controls.email.errors && checkForm }" type="text" formControlName="email" class="form-control" />
+                <div  class="invalid-feedback" *ngIf="studentForm.controls.email.errors && checkForm">
                     <div *ngIf="studentForm.controls.email.errors.required">
                         Insert Email Id
                     </div>
@@ -55,6 +56,8 @@
             <br />
             <br />
             <input type="submit" (click)="submit()" value="Submit" class="btn btn-success" />
+            <br />
+            <!-- <input type="text" class="form-control" disabled="true"/> -->
         </div>
     </div>
 </form>
