@@ -7,6 +7,7 @@ routes.use("/api/user", require("../controllers/UserController"));
 routes.use("/api/auth", require("../controllers/AuthController"));
 routes.use("/api/course", require("../controllers/CourseController"));
 routes.use("/api/student", require("../controllers/StudentController"));
+routes.use("/api/image", require("../controllers/ImageController"));
 routes.use("/api/profile", Auth, require("../controllers/ProfileController"));
 
 

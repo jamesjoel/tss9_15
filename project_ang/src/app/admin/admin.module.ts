@@ -15,6 +15,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { AddProductComponent } from './pages/add-product/add-product.component';
 import { StudentComponent } from './pages/student/student.component';
 import { StudentAddEditComponent } from './pages/student-add-edit/student-add-edit.component';
+import { ImagesComponent } from './pages/images/images.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { StudentAddEditComponent } from './pages/student-add-edit/student-add-ed
     FooterComponent,
     AddProductComponent,
     StudentComponent,
-    StudentAddEditComponent
+    StudentAddEditComponent,
+    ImagesComponent
   ],
   imports: [
     CommonModule,

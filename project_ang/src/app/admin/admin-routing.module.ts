@@ -7,6 +7,7 @@ import { CategoryComponent } from './pages/category/category.component';
 import { AddProductComponent } from './pages/add-product/add-product.component';
 import { StudentComponent } from './pages/student/student.component';
 import { StudentAddEditComponent } from './pages/student-add-edit/student-add-edit.component';
+import { ImagesComponent } from './pages/images/images.component';
 
 const routes: Routes = [
   {
@@ -40,6 +41,10 @@ const routes: Routes = [
       {
         path : "student/edit/:id",
         component : StudentAddEditComponent
+      },
+      {
+        path : "images",
+        component : ImagesComponent
       }
     ]
   }

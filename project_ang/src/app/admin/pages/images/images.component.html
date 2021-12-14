@@ -1,0 +1,37 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-12">
+            <form [formGroup]="imageForm" >
+            <h3>Image Upload</h3>
+            <br />
+            <br />
+            <div class="form-group">
+                <label>Image Name</label>
+                <input type="text" formControlName="name" class="form-control" />
+                <p *ngIf="checkForm && imageForm.controls.name.errors" class="text-danger">
+                    Insert File Name
+                </p>
+            </div>
+            <div class="form-group">
+                <label>Select Image</label>
+                <input #file type="file" formControlName="image" class="form-control" />
+                <div *ngIf="checkForm && imageForm.controls.image.errors">
+
+                    <p *ngIf="imageForm.controls.image.errors.required" class="text-danger">
+                        Select Images
+                    </p>
+                    <p *ngIf="imageForm.controls.image.errors.typeErr" class="text-danger">
+                        This File Type Not Allowed
+                    </p>
+                    <p *ngIf="imageForm.controls.image.errors.sizeErr" class="text-danger">
+                        This File is Too Large
+                    </p>
+                </div>
+            </div>
+            <br />
+            <input type="submit" (click)="submit(file)" value="Upload" class="btn btn-success" />
+            </form>
+        </div>
+        
+    </div>
+</div>
