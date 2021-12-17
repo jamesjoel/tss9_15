@@ -11,6 +11,9 @@ export class ImagesComponent implements OnInit {
 
   imageForm : FormGroup;
   checkForm = false;
+  allImage:any=[];
+
+
   constructor(
     private _fb : FormBuilder,
     private _http : HttpClient
@@ -19,12 +22,25 @@ export class ImagesComponent implements OnInit {
       name : ["", Validators.required],
       image : ["", Validators.required]
     })
+    this._http.get<any>("http://localhost:3000/api/image").subscribe(result=>{
+      this.allImage = result;
+    })
    }
 
   ngOnInit(): void {
   }
   submit(file:any){
     let image = file.files[0];
+    
+    let form = new FormData();
+    form.append("image", image);
+    form.append("data", JSON.stringify(this.imageForm.value));
+    this._http.post<any>("http://localhost:3000/api/image", form).subscribe(result=>{
+      console.log(result);
+      this.allImage.unshift(result);
+    })
+    // console.log(this.imageForm.value);
+    /*
     
     if(this.imageForm.invalid){
       this.checkForm = true;
@@ -47,18 +63,13 @@ export class ImagesComponent implements OnInit {
     // console.log(this.imageForm.value);
 
     let form = new FormData();
-    /*
-    for()
-    {
-      form.append("image"+i, image);
-    }
-    */
-    form.append("image", image);
+        form.append("image", image);
     form.append("data", JSON.stringify(this.imageForm.value));
 
     this._http.post<any>("http://localhost:3000/api/image", form).subscribe(result=>{
       console.log(result);
     })
+    */
   }
 
   
