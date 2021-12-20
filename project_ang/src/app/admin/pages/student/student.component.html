@@ -3,30 +3,47 @@
         <div class="col-md-12">
             <h3 class="text-center">Student List</h3>
             <a class="btn btn-info" routerLink="/admin/student/add">Add Student</a>
+            
+            <button class="btn btn-info" (click)="getData()">Show <span *ngIf="showSpinner" class="spinner-border text-light spinner-border-sm"></span></button>
             <br />
             <table class="table table-dark mt-3 table-bordered">
                 <tr>
                     <th>S.No.</th>
                     <th>Name</th>
                     <th>Fee</th>
+                    <th>Discount</th>
                     <th>Contact</th>
                     <th>Course</th>
-                    <th>Adderss</th>
+                    
                     <th>Delete</th>
                     <th>Edit</th>
                 </tr>
                 <tr *ngFor="let s of allStudent; let n = index">
                     <td>{{ n+1 }}</td>
                     <td>{{ s.full_name }}</td>
-                    <td>{{ s.fee }}</td>
+                    <td>{{ s.fee | currency : '&#8377;' }}</td>
+                    <td>{{ s.fee | discount : s.course | currency : '&#8377;' }}</td>
                     <td>{{ s.contact }}</td>
                     <td>{{ s.course }}</td>
-                    <td>{{ s.address }}</td>
+                    
                     <td><button (click)="askDelete(s)" data-toggle="modal" data-target="#delModal" class="btn btn-sm btn-danger">Delete</button></td>
                     <td><a routerLink="/admin/student/edit/{{ s._id }}" class="btn btn-info">Edit</a></td>
                 </tr>
             </table>
 
+
+            <table class="table table-dark table-bordered">
+                <tr>
+                    <th>S.No.</th>
+                    <th>Id</th>
+                    <th>Title</th>
+                </tr>
+                <tr *ngFor="let c of allComments; let n = index">
+                    <td>{{ n+1 }}</td>
+                    <td>{{ c.id }}</td>
+                    <td>{{ c.title }}</td>
+                </tr>
+            </table>
         </div>
     </Div>
 </div>

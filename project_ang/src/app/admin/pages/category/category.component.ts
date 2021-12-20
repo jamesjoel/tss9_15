@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoryComponent implements OnInit {
 
+  name:any;
+  formData:any;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  demo(a:any){
+    console.log(a);
+    this.name = a;
+  }
+
+  rec(obj:any){
+    console.log(obj);
+    this.formData = obj;
   }
 
 }

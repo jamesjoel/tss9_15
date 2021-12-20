@@ -1,1 +1,9 @@
 <p>category works!</p>
+<h3>{{ name }}</h3>
+<div *ngIf="formData">
+
+    <h4>{{ formData.name }}</h4>
+    <h4>{{ formData.age }}</h4>
+</div>
+
+<app-my-form (myEvent)="demo($event)" (formEvent)="rec($event)"></app-my-form>

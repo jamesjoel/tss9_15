@@ -16,6 +16,9 @@ import { AddProductComponent } from './pages/add-product/add-product.component';
 import { StudentComponent } from './pages/student/student.component';
 import { StudentAddEditComponent } from './pages/student-add-edit/student-add-edit.component';
 import { ImagesComponent } from './pages/images/images.component';
+import { DiscountPipe } from './pipes/discount.pipe';
+import { ProductBoxComponent } from './shared/product-box/product-box.component';
+import { MyFormComponent } from './shared/my-form/my-form.component';
 
 
 @NgModule({
@@ -29,7 +32,10 @@ import { ImagesComponent } from './pages/images/images.component';
     AddProductComponent,
     StudentComponent,
     StudentAddEditComponent,
-    ImagesComponent
+    ImagesComponent,
+    DiscountPipe,
+    ProductBoxComponent,
+    MyFormComponent
   ],
   imports: [
     CommonModule,

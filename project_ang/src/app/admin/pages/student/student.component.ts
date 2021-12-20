@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { StudentService } from '../../services/student.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-student',
@@ -10,13 +11,17 @@ export class StudentComponent implements OnInit {
 
   @ViewChild('closeBtn') closeBtn:any;
   allStudent : any = [];
+  allComments : any = [];
+  showSpinner=false;
   student:any;
   constructor(
-    private _stu : StudentService
+    private _stu : StudentService,
+    private _http : HttpClient
+
   ) {
-    this._stu.getAll().subscribe(result=>{
-      this.allStudent = result;
-    })
+    // this._stu.getAll().subscribe(result=>{
+    //   this.allStudent = result;
+    // })
    }
 
   ngOnInit(): void {
@@ -38,6 +43,14 @@ export class StudentComponent implements OnInit {
       this.allStudent.splice(n, 1)
       
       this.closeBtn.nativeElement.click();
+    })
+  }
+
+  getData(){
+    this.showSpinner = true;
+    this._http.get<any>("https://jsonplaceholder.typicode.com/albums").subscribe(result=>{
+      this.allComments = result;
+      this.showSpinner = false;
     })
   }
 }
