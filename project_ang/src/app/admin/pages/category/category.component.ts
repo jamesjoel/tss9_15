@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-category',
@@ -9,7 +10,7 @@ export class CategoryComponent implements OnInit {
 
   name:any;
   formData:any;
-  constructor() { }
+  constructor(private _cart : CartService) { }
 
   ngOnInit(): void {
   }
@@ -22,6 +23,10 @@ export class CategoryComponent implements OnInit {
   rec(obj:any){
     console.log(obj);
     this.formData = obj;
+  }
+
+  demo2(){
+    this._cart.update(1);
   }
 
 }

@@ -19,6 +19,7 @@ import { ImagesComponent } from './pages/images/images.component';
 import { DiscountPipe } from './pipes/discount.pipe';
 import { ProductBoxComponent } from './shared/product-box/product-box.component';
 import { MyFormComponent } from './shared/my-form/my-form.component';
+import { MyDirDirective } from './directives/my-dir.directive';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { MyFormComponent } from './shared/my-form/my-form.component';
     ImagesComponent,
     DiscountPipe,
     ProductBoxComponent,
-    MyFormComponent
+    MyFormComponent,
+    MyDirDirective
   ],
   imports: [
     CommonModule,
