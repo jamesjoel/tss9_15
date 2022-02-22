@@ -31,6 +31,7 @@
                             </ul>
                         </li>
                         <li><a routerLink="/about">About</a></li>
+                        <li><a routerLink="/city">City</a></li>
                         <ng-template [ngIfElse]="not_logged" [ngIf]="_auth.isLoggedIn()">
                             <li><a routerLink="/my-account">My-Account</a></li>
                             <li><a (click)="_auth.logout()" href="#">Logout</a></li>

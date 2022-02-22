@@ -8,10 +8,12 @@ routes.use("/api/auth", require("../controllers/AuthController"));
 routes.use("/api/course", require("../controllers/CourseController"));
 routes.use("/api/student", require("../controllers/StudentController"));
 routes.use("/api/image", require("../controllers/ImageController"));
+routes.use("/api/city", require("../controllers/CityController"));
 routes.use("/api/profile", Auth, require("../controllers/ProfileController"));
 
 
 function Auth(req, res, next){
+    console.log(req.headers);
     if(req.headers && req.headers.authorization){
         var token = JSON.parse(req.headers.authorization);
         jwt.verify(token, "The stepping stone", (err, userinfo)=>{

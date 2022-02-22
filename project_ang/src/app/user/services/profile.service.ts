@@ -13,12 +13,13 @@ export class ProfileService {
   ) { }
 
   get(){
-    let token = JSON.stringify(localStorage.getItem("token"));
-    return this._http.get<any>(this.apiUrl+"/profile", {
-      headers : {
-        Authorization : token
-      }
-    });
+    // let token = JSON.stringify(localStorage.getItem("token"));
+    // return this._http.get<any>(this.apiUrl+"/profile", {
+    //   headers : {
+    //     Authorization : token
+    //   }
+    // });
+    return this._http.get<any>(this.apiUrl+"/profile");
   }
 }
 

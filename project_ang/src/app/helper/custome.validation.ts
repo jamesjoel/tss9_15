@@ -1,4 +1,5 @@
 import { FormGroup } from '@angular/forms';
+import { MyservService } from '../services/myserv.service';
 
 export function numCheck(field:any){
     return function(myForm : FormGroup){
@@ -55,5 +56,24 @@ export function passCheck(pass:any, repass:any)
         else{
             b.setErrors(null);
         }
+    }
+}
+
+export function checkUserName(){
+    return function(myform : FormGroup, _my : MyservService){
+        let a = myform.controls.email;
+
+        if(a.errors && !a.errors.matchErr){
+            return;
+        }
+        console.log(_my.getDataByUserName("hello"));
+        // if(_my.getDataByUserName(a.value).check == true){
+            
+        //         a.setErrors({"matcherr": true});
+            
+        //     }
+        //     else{
+        //         a.setErrors(null);
+        //     }
     }
 }

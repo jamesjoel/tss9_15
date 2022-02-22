@@ -12,6 +12,27 @@ import { Title } from '@angular/platform-browser';
 })
 export class AboutComponent implements OnInit {
 
+  imgArr:any=[
+    {
+      image: 'assets/images/blog-1.jpg',
+      thumbImage: 'assets/images/blog-1.jpg',
+      alt: 'alt of image',
+      title: 'title of image'
+    },
+    {
+      image: 'assets/images/blog-2.jpg',
+      thumbImage: 'assets/images/blog-2.jpg',
+      alt: 'alt of image',
+      title: 'title of image'
+    },{
+      image: 'assets/images/blog-3.jpg',
+      thumbImage: 'assets/images/blog-3.jpg',
+      alt: 'alt of image',
+      title: 'title of image'
+    }
+  ];
+  ops = {width: '100%', height: 250};
+
   allData:MyData[]=[];
   constructor(
     private a : MyservService,

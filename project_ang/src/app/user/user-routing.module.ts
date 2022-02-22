@@ -9,6 +9,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { UserComponent } from './user.component';
 import { BackdoorGuard } from './guard/backdoor.guard';
 import { AntiBackdoorGuard } from './guard/anti-backdoor.guard';
+import { CityComponent } from './pages/city/city.component';
 
 
 const routes: Routes = [
@@ -42,6 +43,10 @@ const routes: Routes = [
         path : "my-account",
         component : MyAccountComponent,
         canActivate : [BackdoorGuard]
+      },
+      {
+        path : "city",
+        component : CityComponent
       }
     ]
   }

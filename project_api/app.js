@@ -11,7 +11,15 @@ app.use(upload());
 
 app.use(cors());
 
+app.get("/", (req, res)=>{
+    res.sendFile(__dirname+"/index.html");
+})
+
 app.use(routes);
+
+app.get("*", (req, res)=>{
+    res.sendFile(__dirname+"/index.html");
+})
 
 var port = process.env.PORT || 3000;
 app.listen(port, ()=>{

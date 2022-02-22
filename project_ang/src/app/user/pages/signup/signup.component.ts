@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { numCheck, sizeCheck, passCheck } from '../../../helper/custome.validation';
+import { numCheck, sizeCheck, passCheck, checkUserName } from '../../../helper/custome.validation';
 import { UserService } from '../../../services/user.service';
 import { Router } from '@angular/router';
 
@@ -31,7 +31,7 @@ export class SignupComponent implements OnInit {
       city : ["", Validators.required],
     },
     {
-      validator : [numCheck('contact'), sizeCheck('contact'), passCheck('password', 're_password')]
+      validator : [numCheck('contact'), sizeCheck('contact'), passCheck('password', 're_password'), checkUserName()]
     })
    }
 

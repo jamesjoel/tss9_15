@@ -5,21 +5,10 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class CartService {
-
-  // myobs:any;
-  // mydata:any;
   myobs = new BehaviorSubject(0);
-  // this is Subject
-  // this.myobj.subscribe(data=>{
-
-  // })
   mydata = this.myobs.asObservable();
-  // Observable by its subject
-  // this.mydata.update()
-
-
-  constructor() {
-    //this.myobs.update();
+   constructor() {
+ 
    }
 
   update(a:any){

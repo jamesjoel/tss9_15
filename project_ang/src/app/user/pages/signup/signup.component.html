@@ -19,6 +19,9 @@
                         <div *ngIf="signupForm.controls.email.errors.email">
                             Email Id is Incorrect
                         </div>
+                        <div *ngIf="signupForm.controls.email.errors.matcherr">
+                            Email Exists
+                        </div>
                     </div>
                 </div>
                 <div class="form-group">
@@ -72,7 +75,12 @@
                         <option value="pune">Pune</option>
                     </select>
                     <div class="invalid-feedback" *ngIf="signupForm.controls.city.errors && checkForm">
-                        Select Your City
+                        <div *ngIf="signupForm.controls.city.errors.required">
+                            Select Your City
+                        </div>
+                        <div *ngIf="signupForm.controls.city.errors.myerr">
+                            ------------------------------
+                        </div>
                     </div>
                 </div>
                 
