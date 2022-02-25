@@ -12,8 +12,9 @@ export class CityComponent implements OnInit {
   itemPerPage = 100;
   totalRec = 0;
   totalPages = 0;
+  currPage = 1;
   constructor(private _city : CityService) {
-    this._city.getCity().subscribe(data=>{
+    this._city.getCity(this.currPage, this.itemPerPage).subscribe(data=>{
       this.allCity = data;
       console.log(data);
     });
@@ -25,6 +26,14 @@ export class CityComponent implements OnInit {
    }
 
   ngOnInit(): void {
+  }
+
+  pagination(pageno:any){
+    this.currPage = pageno;
+    this._city.getCity(this.currPage, this.itemPerPage).subscribe(data=>{
+      this.allCity = data;
+      console.log(data);
+    });
   }
 
 }

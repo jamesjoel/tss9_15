@@ -8,8 +8,8 @@ export class CityService {
 
   constructor(private _http : HttpClient) { }
 
-  getCity(){
-      return this._http.get<any>(environment.ApiUrl+"/city");
+  getCity(pageno:any, total:any){
+      return this._http.get<any>(environment.ApiUrl+"/city/"+pageno+"/"+total);
     }
     totalRec(){
       
