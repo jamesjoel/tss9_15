@@ -1,3 +1,27 @@
 <p>dashboard works!</p>
+<div style="min-height: 1200px; height: auto;">
+    <div class="ng-autocomplete">
+        <ng-autocomplete 
+          [data]="data"
+          [searchKeyword]="keyword"
+          placeholder="Search Product"
+          (selected)='selectEvent($event)'
+          (inputChanged)='onChangeSearch($event)'
+          (inputFocused)='onFocused($event)'
+          [itemTemplate]="itemTemplate"
+          [notFoundTemplate]="notFoundTemplate">                                 
+        </ng-autocomplete>
+        
+        <ng-template #itemTemplate let-item>
+        <a [innerHTML]="item.title"></a>
+        </ng-template>
+        
+        <ng-template #notFoundTemplate let-notFound>
+        <div [innerHTML]="notFound"></div>
+        </ng-template>
+        </div>
 
-<app-product-box *ngFor="let p of allProduct" [pro]="p" [cName]="name"></app-product-box>
+
+
+    <app-product-box *ngFor="let p of data | filter : z" [pro]="p" [cName]="name"></app-product-box>
+</div>

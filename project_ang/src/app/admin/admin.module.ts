@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { AutocompleteLibModule } from 'angular-ng-autocomplete';
+
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -20,6 +22,7 @@ import { DiscountPipe } from './pipes/discount.pipe';
 import { ProductBoxComponent } from './shared/product-box/product-box.component';
 import { MyFormComponent } from './shared/my-form/my-form.component';
 import { MyDirDirective } from './directives/my-dir.directive';
+import { FilterPipe } from './pipe/filter.pipe';
 
 
 @NgModule({
@@ -37,14 +40,16 @@ import { MyDirDirective } from './directives/my-dir.directive';
     DiscountPipe,
     ProductBoxComponent,
     MyFormComponent,
-    MyDirDirective
+    MyDirDirective,
+    FilterPipe
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AutocompleteLibModule
   ]
 })
 export class AdminModule { }

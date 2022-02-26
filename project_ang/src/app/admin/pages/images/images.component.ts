@@ -30,12 +30,12 @@ export class ImagesComponent implements OnInit {
   ngOnInit(): void {
   }
   submit(file:any){
-    let image = file.files;
+    let image = file.files[0];
     let form = new FormData();
 
-    image.forEach((x)=>{
+    // image.forEach((x)=>{
 
-    })
+    // })
     
     form.append("image", image);
     form.append("data", JSON.stringify(this.imageForm.value));

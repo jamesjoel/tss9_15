@@ -9,11 +9,16 @@ const routes: Routes = [
   {
     path : "admin",
     loadChildren : ()=> import('./admin/admin.module').then(a=>a.AdminModule)
+  },
+  {
+    path : "**",
+    redirectTo : "admin",
+    pathMatch : "full"
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration : 'top' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
